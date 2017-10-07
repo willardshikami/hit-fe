@@ -1,2 +1,2 @@
-# projectstack
-app about your project and the stack you're using
+# Techie
+Share your story as a Techie
