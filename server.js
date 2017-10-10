@@ -3,6 +3,7 @@ const path = require('path')
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config/database');
 
 //init app var for express
 const app = express();
@@ -14,8 +15,10 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'client')));
 
 //Connect to DB
-mongoose.connection.openUri('mongodb://localhost')
-const db = mongoose.connection;
+mongoose.connection.openUri(config.database);
+mongoose.connection.on('connected', () => {
+  console.log('connected to database ' +config.database);
+});
 
 //cors middleware
 app.use(cors());
