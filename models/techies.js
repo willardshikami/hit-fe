@@ -69,3 +69,8 @@ module.exports.getTechieByName = function(name, callback){
   const query = { name: name }
   Techie.findOne(query, callback);
 }
+
+//add techie
+module.exports.addTechie = function(techie, callback){
+  Techie.create(techie, callback);
+}

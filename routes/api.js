@@ -26,7 +26,13 @@ router.get('/techies/:_name', (req, res, next) => {
 
 //add techies
 router.post('/techies', (req, res, next) => {
-  
+  var techie = req.body;
+  Techie.addTechie(techie, function(err, techie) {
+    if(err){
+      throw err;
+    }
+    res.json(techie);
+  });
 });
 
 //update techies
