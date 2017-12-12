@@ -14,7 +14,7 @@ const app = express();
 const port = 3000;
 
 //linking to clientside
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'app')));
 
 //connecting to DB
 mongoose.connection.openUri(config.database);
