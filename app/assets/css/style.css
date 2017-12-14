@@ -82,7 +82,9 @@ a:focus {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     background-color: #fff;
-	height:80px;
+    height:80px;
+    text-transform: uppercase;
+    
 	
 }
 .navbar-default {
@@ -95,11 +97,11 @@ a:focus {
 }
 
 .navbar-nav li a:hover{
-    color:#6FB048 !important;
+    color:#EF0D33 !important;
 }
 
 .menu-scroll .main_menu .navbar-nav > li > a:hover {
-    color:#6FB048;
+    color:#EF0D33;
 }
 
 
@@ -139,7 +141,7 @@ a:focus {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #fff;
+    color: #111517;
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
