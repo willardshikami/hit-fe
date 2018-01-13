@@ -82,9 +82,7 @@ a:focus {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     background-color: #fff;
-    height:80px;
-    text-transform: uppercase;
-    
+	height:80px;
 	
 }
 .navbar-default {
@@ -97,11 +95,11 @@ a:focus {
 }
 
 .navbar-nav li a:hover{
-    color:#EF0D33 !important;
+    color:#6FB048 !important;
 }
 
 .menu-scroll .main_menu .navbar-nav > li > a:hover {
-    color:#EF0D33;
+    color:#6FB048;
 }
 
 
@@ -141,7 +139,7 @@ a:focus {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #111517;
+    color: #fff;
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
@@ -158,8 +156,281 @@ a:focus {
     padding-top: 10px;
 }
 
+/*
+==========================================
+SIGN IN AND SIGNUP BUTTON
+==========================================
+*/
+.signin{
+    border: 1px solid #0EB152;
+    padding: 7px 20px !important;
+    margin-right: 20px;
+    margin-top: 5px;
+}
 
+.signin:hover{
+    background: #0EB152;
+    border: 1px solid #0EB152;
+    padding: 7px 20px !important;
+}
+
+.signup{
+    background: #0EB152;
+    border: 1px solid #0EB152;
+    padding: 7px 20px !important;
+    margin-top: 5px;
+}
+
+.signup:hover{
+    background: #13EC6D;
+    border: 1px solid #13EC6D;
+}
+
+
+/*==========================================
+HERO image and content
+==========================================*/
+#hero{
+    background:url(../img/hero_bg.jpg) no-repeat;
+	background-size:cover;
+}
+
+.hero_content{
+    padding:195px 0;
+    max-width:515px;
+    color:#fff;
+	margin-top:80px;
+}	
+
+.hero_overlay{
+	background: rgba(48, 107, 109, 0.65);
+    height: 660px;
+
+}
+
+.hero_content h2{
+    color:#ffffff;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.hero_content p{
+    color:#ffffff;	
+    font-size: 20px;
+    line-height: 30px;
+}
+
+/*
+==========================================
+HERO BUTTON
+==========================================
+*/
+.hero-btn{
+    margin-top: 20px;
+}
+
+.hero-btn a{
+    color: #FFFFFF;
+}
+
+.btn{
+    background-color: #0EB152; 
+    border: 1px solid #0EB152;
+    border-radius: 0;
+    padding: 10px 30px;
+}
+
+
+/*==========================================
+SERVICES
+==========================================*/
+.services{
+    background: #F2F2F2;
+    padding: 50px 0 50px 0;
+    text-align: center
+}
+
+.service-item{
+    border-right: 1px solid #0EB152;
+}
+
+.menu img{
+    width: 25px;
+}
+
+.menu p{
+    font-size: 12px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/*
+==========================================
+HOW IT WORKS
+==========================================
+*/
+
+#how-it-works{
+    text-align: center;
+    max-width: 720px;
+    padding: 50px 0 50px 0;
+}
+
+#how-it-works h2{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+#how-it-works p{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 35px;
+}
+
+/*
+==========================================
+PRODUCTS
+==========================================
+*/
+.products{
+    padding-bottom: 50px;
+}
+.products img{
+    width: 30%;
+    padding-bottom: 10px;
+}
+
+.products .content{
+    padding: 30px;
+}
+
+.content a{
+    color: #0EB152;
+}
+
+.content a:hover{
+    color: #13EC6D;
+}
+
+.content a:active{
+    color: #0EB152;
+}
+
+.content a:after{
+    color: #0EB152;
+}
+
+.product-line{
+    width: 30px;
+    border: 1px solid #0EB152;
+}
+
+
+/*
+==========================================
+ABOUT US
+==========================================
+*/
+.about-us{
+    background-color:  #0EB152;
+    padding: 80px 80px;
+    color: #F2F2F2;
+}
+
+.about-line{
+    width: 30px;
+    border: 1px solid #FFFFFF;
+}
+
+.about-us img{
+    padding-top: 70px;
+}
+
+.about-us h4{
+    font-size: 14px;
+    padding-top: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.about-us p{
+    line-height: 30px;
+    font-size: 18px;
+}
+
+/*
+==========================================
+WHY HEALTHIX
+==========================================
+*/
+
+.testimonials {
+	background-color: #009FB6;
+	position: relative;
+	text-align: center;
+}
+.testimonials blockquote {
+	border: 0;
+	margin: 0;
+	padding: 100px 15%;
+}
+.testimonials h1 {
+	color: #FFF;
+	font-size: 23px;
+	font-weight: 300;
+}
+.testimonials p {
+	color: #FFF;
+	display: block;
+	font-size: 13px;
+	font-style: normal;
+	letter-spacing: 2px;
+	font-weight: 400;
+	margin-top: 30px;
+	text-transform: uppercase;
+}
+.flex-control-nav {
+	margin-top: 2%;
+	bottom: none!important;
+	position: relative!important;
+	right: 0;
+	text-align: center;
+	width: 100%!important;
+	z-index: 100;
+}
 
 /*==========================================
 FOOTER
 ==========================================*/
+.pre-footer{
+    background-color: #4D4D4D;
+    color: #FFFFFF;
+    padding: 10px 0 30px 0;
+}
+
+.menu ul a{
+    color: #FFFFFF;
+}
+
+.menu ul a:hover{
+    color: #F2F2F2;
+}
+
+.menu ul a:active{
+    color: #F2F2F2;
+}
+
+.menu ul a:after{
+    color: #F2F2F2;
+}
+
+#footer{
+    background-color: #444444;
+    padding: 50px 0px 50px 0px;
+    text-align: center;
+    bottom: 0;
+}
+
+.copyright{
+    color: #FFFFFF;
+}
