@@ -2,11 +2,12 @@ const graphql = require('graphql');
 const { GraphQLObjectType,
         GraphQLString,
         GraphQLSchema,
-        GraphQLID
+        GraphQLID,
+        GraphQLList
 
 }  = graphql;
 
-const TechieType= new GraphQLObjectType({
+const TechieType = new GraphQLObjectType({
   name: 'Techie',
   fields: () => ({
     id: {type: GraphQLID},
@@ -24,7 +25,7 @@ const TechieType= new GraphQLObjectType({
   })
 });
 
-const LinkType= new GraphQLObjectType({
+const LinkType = new GraphQLObjectType({
   name: 'Link',
   fields: () => ({
     id: {type: GraphQLID},
@@ -51,6 +52,12 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID }},
       resolve(parent, args){
         //get data from db 
+      }
+    },
+    techies: {
+      type: GraphQLList(TechieType),
+      resolve(parent, args){
+        return techies;
       }
     }
   }
