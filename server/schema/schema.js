@@ -16,17 +16,17 @@ const TechieType = new GraphQLObjectType({
     img: { type: GraphQLString },
     stack: { type: GraphQLString },
     position: { type: GraphQLString },
-    link: {
-      type: LinkType,
+    social: {
+      type: SocialType,
       resolve(parent, args){
-        return _.find(link, { id: parent.linkId})
+        return _.find(social, { id: parent.socialId})
       }
     }
   })
 });
 
-const LinkType = new GraphQLObjectType({
-  name: 'Link',
+const SocialType = new GraphQLObjectType({
+  name: 'Social',
   fields: () => ({
     id: {type: GraphQLID},
     twitter: { type: GraphQLString },
@@ -47,8 +47,8 @@ const RootQuery = new GraphQLObjectType({
           //get data from db
         }
     },
-    link: {
-      type: LinkType,
+    social: {
+      type: SocialType,
       args: { id: { type: GraphQLID }},
       resolve(parent, args){
         //get data from db 
