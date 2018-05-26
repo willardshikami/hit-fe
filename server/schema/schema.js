@@ -1,4 +1,5 @@
 const graphql = require('graphql');
+const _ = require('lodash');
 const { GraphQLObjectType,
         GraphQLString,
         GraphQLSchema,
@@ -6,6 +7,10 @@ const { GraphQLObjectType,
         GraphQLList
 
 }  = graphql;
+
+//Models
+const Social = require('../models/social');
+const Techie = require('../models/techie');
 
 const TechieType = new GraphQLObjectType({
   name: 'Techie',
@@ -19,7 +24,7 @@ const TechieType = new GraphQLObjectType({
     social: {
       type: SocialType,
       resolve(parent, args){
-        return _.find(social, { id: parent.socialId})
+        return Social.findById(parent.socialId)
       }
     }
   })
@@ -38,13 +43,13 @@ const SocialType = new GraphQLObjectType({
 });
 
 const RootQuery = new GraphQLObjectType({
-  name: 'RootQuertType',
+  name: 'RootQueryType',
   fields: {
     techie: {
         type: TechieType,
         args: { id: { type: GraphQLID }},
         resolve(parent, args){
-          //get data from db
+          return Techie.findById(args.id);
         }
     },
     social: {
@@ -52,12 +57,13 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID }},
       resolve(parent, args){
         //get data from db 
+        return Social.findById(args.id);
       }
     },
     techies: {
       type: GraphQLList(TechieType),
       resolve(parent, args){
-        return techies;
+        return Techie.find({});
       }
     }
   }
