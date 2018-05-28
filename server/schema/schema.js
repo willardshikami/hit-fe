@@ -1,5 +1,10 @@
 const graphql = require('graphql');
 const _ = require('lodash');
+
+//Models
+const Social = require('../models/social');
+const Techie = require('../models/techie');
+
 const { GraphQLObjectType,
         GraphQLString,
         GraphQLSchema,
@@ -8,9 +13,7 @@ const { GraphQLObjectType,
 
 }  = graphql;
 
-//Models
-const Social = require('../models/social');
-const Techie = require('../models/techie');
+
 
 const TechieType = new GraphQLObjectType({
   name: 'Techie',
@@ -69,6 +72,58 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
+const Mutation = new GraphQLObjectType({
+  name: 'Mutations',
+  fields: {
+    addTechie: {
+      type: TechieType,
+      args: {
+        name: { type: GraphQLString },
+        bio: { type: GraphQLString },
+        img: { type: GraphQLString },
+        stack: { type: GraphQLString },
+        position: { type: GraphQLString },
+        socialId: { type: GraphQLID }
+      },
+      resolve(parent, args){
+        let techie = new Techie({
+          name: args.name,
+          bio: args.bio,
+          img: args.img,
+          stack: args.stack,
+          position: args.position,
+          socialId: args.socialId
+        });
+        
+        return techie.save();
+      }
+    },
+
+    addSocial:{
+      type: SocialType,
+      args: {
+        twitter: { type: GraphQLString },
+        instagram: { type: GraphQLString },
+        website: { type: GraphQLString },
+        linkedin: { type: GraphQLString },
+        github: { type: GraphQLString }
+      },
+      resolve(parent, args){
+        let social = new Social({
+          twitter: args.twitter,
+          instagram: args.instagram,
+          website: args.website,
+          linkedin: args.linkedin,
+          github: args.github
+        });
+
+        return social.save();   
+      }
+    }
+  }
+})
+
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation: Mutation
 });
