@@ -7,7 +7,7 @@ const techieSchema = new Schema({
   img: String,
   stack: String,
   current_role: String,
-  years_in_tech: Number,
+  years_in_tech: String,
   twitter: String,
   instagram: String,
   linkedin: String,
