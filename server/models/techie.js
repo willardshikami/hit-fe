@@ -6,8 +6,13 @@ const techieSchema = new Schema({
   bio: String,
   img: String,
   stack: String,
-  position: String,
-  socialId: String
+  current_role: String,
+  years_in_tech: Number,
+  twitter: String,
+  instagram: String,
+  linkedin: String,
+  github: String,
+  website: String
 })
 
 module.exports = mongoose.model('Techie', techieSchema);
