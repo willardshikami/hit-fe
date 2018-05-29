@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ApolloClient from 'apollo-client';
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 //Components
@@ -7,7 +7,7 @@ import Techielist from './components/Techielist'
 
 //Apollo Setup
 const client = new ApolloClient({
-  uri: 'http:localhost:3000/graphql'
+  uri: 'http://localhost:4000/graphql'
 })
 
 class App extends Component {
