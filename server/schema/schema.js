@@ -1,8 +1,6 @@
 const graphql = require('graphql');
-const _ = require('lodash');
 
 //Models
-const Social = require('../models/social');
 const Techie = require('../models/techie');
 
 const { GraphQLObjectType,
@@ -23,25 +21,13 @@ const TechieType = new GraphQLObjectType({
     bio: { type: GraphQLString },
     img: { type: GraphQLString },
     stack: { type: GraphQLString },
-    position: { type: GraphQLString },
-    social: {
-      type: SocialType,
-      resolve(parent, args){
-        return Social.findById(parent.socialId)
-      }
-    }
-  })
-});
-
-const SocialType = new GraphQLObjectType({
-  name: 'Social',
-  fields: () => ({
-    id: {type: GraphQLID},
+    current_role: { type: GraphQLString },
+    years_in_tech: { type: GraphQLString },
     twitter: { type: GraphQLString },
     instagram: { type: GraphQLString },
-    website: { type: GraphQLString },
     linkedin: { type: GraphQLString },
-    github: { type: GraphQLString }
+    github: { type: GraphQLString },
+    website: { type: GraphQLString }
   })
 });
 
@@ -54,14 +40,6 @@ const RootQuery = new GraphQLObjectType({
         resolve(parent, args){
           return Techie.findById(args.id);
         }
-    },
-    social: {
-      type: SocialType,
-      args: { id: { type: GraphQLID }},
-      resolve(parent, args){
-        //get data from db 
-        return Social.findById(args.id);
-      }
     },
     techies: {
       type: GraphQLList(TechieType),
@@ -82,8 +60,14 @@ const Mutation = new GraphQLObjectType({
         bio: { type: GraphQLString },
         img: { type: GraphQLString },
         stack: { type: GraphQLString },
-        position: { type: GraphQLString },
-        socialId: { type: GraphQLID }
+        current_role: { type: GraphQLString },
+        years_in_tech: { type: GraphQLString },
+        twitter: { type: GraphQLString },
+        instagram: { type: GraphQLString },
+        linkedin: { type: GraphQLString },
+        github: { type: GraphQLString },
+        website: { type: GraphQLString }
+
       },
       resolve(parent, args){
         let techie = new Techie({
@@ -91,33 +75,16 @@ const Mutation = new GraphQLObjectType({
           bio: args.bio,
           img: args.img,
           stack: args.stack,
-          position: args.position,
-          socialId: args.socialId
+          current_role: args.current_role,
+          years_in_tech: args.years_in_tech,
+          twitter: args.twitter,
+          instagram: args.instagram,
+          linkedin: args.linkedin,
+          github: args.github,
+          website: args.website
         });
         
         return techie.save();
-      }
-    },
-
-    addSocial:{
-      type: SocialType,
-      args: {
-        twitter: { type: GraphQLString },
-        instagram: { type: GraphQLString },
-        website: { type: GraphQLString },
-        linkedin: { type: GraphQLString },
-        github: { type: GraphQLString }
-      },
-      resolve(parent, args){
-        let social = new Social({
-          twitter: args.twitter,
-          instagram: args.instagram,
-          website: args.website,
-          linkedin: args.linkedin,
-          github: args.github
-        });
-
-        return social.save();   
       }
     }
   }
@@ -127,3 +94,5 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation
 });
+
+//years in tech, current role, personal links, 
