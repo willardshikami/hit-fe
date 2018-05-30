@@ -1,25 +1,10 @@
 import React, { Component } from 'react';
-import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
+import getTechies from '../queries/queries';
+import { Card, Col, Row } from 'antd';
 
+const { Meta } = Card;
 
-const getTechies = gql`
-  {
-    techies{
-      name
-      bio
-      img
-      stack
-      current_role
-      years_in_tech
-      twitter
-      instagram
-      linkedin
-      github
-      website
-    }
-  }
-`
 
 class Techielist extends Component {
 
@@ -31,18 +16,30 @@ class Techielist extends Component {
     }else{
       return data.techies.map(techie => {
         return(
-          <li key={ techie.id }>{ techie.name }</li>
-        )
+          
+          <Col key={ techie.id } span={8}>
+            <Card
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src={techie.img} />}
+              >
+            <Meta
+              title={ techie.name }
+              description={ techie.current_role }
+              />
+            </Card>
+          </Col>
+            )
       });
     }
   }
 
   render() {
     return (
-      <div>
-        <ul>
+      <div style={{ background: '#F2F2F2', padding: '30px' }}>
+        <Row gutter={16}>
           { this.loadTechies() }
-        </ul>
+        </Row>
       </div>
     );
   }

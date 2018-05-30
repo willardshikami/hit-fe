@@ -4,6 +4,7 @@ import { ApolloProvider } from 'react-apollo';
 
 //Components
 import Techielist from './components/Techielist'
+import AddTechie from './components/AddTechie';
 
 //Apollo Setup
 const client = new ApolloClient({
@@ -18,6 +19,7 @@ class App extends Component {
           <div>
             <h1>This is the header</h1>
             <Techielist />
+            <AddTechie/>
           </div>
         </div>
       </ApolloProvider>
