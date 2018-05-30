@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
-import getTechies from '../queries/queries';
 import { Card, Col, Row } from 'antd';
+import { getTechies } from '../queries/queries';
 
 const { Meta } = Card;
 

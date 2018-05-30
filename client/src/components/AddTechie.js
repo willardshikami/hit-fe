@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Input, Button} from 'antd';
+import { graphql, compose } from 'react-apollo';
+import { addTechieMutation, getTechies } from '../queries/queries';
 
 
 class AddTechie extends Component {
@@ -25,7 +27,22 @@ class AddTechie extends Component {
 
   submitData(e){
     e.preventDefault();
-    console.log(this.state);
+    this.props.addTechieMutation({
+      variables: {
+        name: this.state.name,
+        bio: this.state.bio,
+        img: this.state.img,
+        stack: this.state.stack,
+        current_role: this.state.current_role,
+        years_in_tech: this.state.years_in_tech,
+        twitter: this.state.twitter,
+        instagram: this.state.instagram,
+        linkedin: this.state.linkedin,
+        github: this.state.github,
+        website: this.state.website
+      },
+      refetchQueries: [{ query: getTechies}]
+    })
   }
 
 
@@ -119,4 +136,6 @@ class AddTechie extends Component {
   }
 }
 
-export default AddTechie;
+export default compose(
+  graphql(addTechieMutation, { name: "addTechieMutation"})
+)(AddTechie);

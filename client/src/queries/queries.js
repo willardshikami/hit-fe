@@ -19,4 +19,34 @@ const getTechies = gql`
     }
   }
 `
-export default getTechies;
+
+const addTechieMutation = gql`
+  mutation($name: String!,
+           $bio: String!,
+           $img: String!,
+           $stack: String!,
+           $current_role: String!,
+           $years_in_tech: String!,
+           $twitter: String,
+           $instagram: String,
+           $linkedin: String,
+           $github: String,
+           $website: String){
+    addTechie(
+      name: $name,
+      bio: $bio,
+      img: $img,
+      stack: $stack,
+      current_role: $current_role,
+      years_in_tech: $years_in_tech,
+      twitter: $twitter,
+      instagram: $instagram,
+      linkedin: $linkedin,
+      github: $github,
+      website: $website){
+        name
+        id
+      }
+  }
+`
+export{ getTechies, addTechieMutation };
