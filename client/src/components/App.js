@@ -3,8 +3,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 //Components
-import Techielist from './components/Techielist'
-import AddTechie from './components/AddTechie';
+import Techielist from './Techielist'
+import AddTechie from './AddTechie';
 
 //Apollo Setup
 const client = new ApolloClient({
@@ -17,7 +17,6 @@ class App extends Component {
       <ApolloProvider client={client}>  
         <div className="App">
           <div>
-            <h1>This is the header</h1>
             <Techielist />
             <AddTechie/>
           </div>

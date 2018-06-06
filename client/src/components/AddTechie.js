@@ -23,8 +23,6 @@ class AddTechie extends Component {
     };
   }
 
-
-
   submitData(e){
     e.preventDefault();
     this.props.addTechieMutation({
