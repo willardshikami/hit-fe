@@ -20,6 +20,25 @@ const getTechies = gql`
   }
 `
 
+const getTechie = gql`
+  query($id: String){
+    techie(id: $id){
+      id
+      name
+      bio
+      img
+      stack
+      current_role
+      years_in_tech
+      twitter
+      instagram
+      linkedin
+      github
+      website
+    }
+  }
+`
+
 const addTechieMutation = gql`
   mutation($name: String!,
            $bio: String!,
@@ -49,4 +68,5 @@ const addTechieMutation = gql`
       }
   }
 `
-export{ getTechies, addTechieMutation };
+
+export{ getTechies, addTechieMutation, getTechie };

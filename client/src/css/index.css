@@ -6,3 +6,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.techie-card{
+  margin-bottom: 30px;
+  height: 450px;
+  width: 240px;
+  background: transparent;
+  text-align: center;
+}
+
+.techie-card title{
+  font-size: 40px;
+}
