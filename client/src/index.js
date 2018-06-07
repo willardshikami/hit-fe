@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import App from './components/App';
+import Navigation from './routes/router';
 
 ReactDOM.render(
-  <App />,
+  <Navigation />,
     document.getElementById('root')
   );
 
