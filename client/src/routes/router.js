@@ -23,9 +23,6 @@ const Navigation = () => (
         <li>
           <Link to="/addtechie">AddTechie</Link>
         </li>
-        <li>
-          <Link to="/techie">Techie</Link>
-        </li>
       </ul>
 
       <hr />
