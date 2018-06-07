@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button} from 'antd';
+import { Row, Col, Input} from 'antd';
 import { graphql, compose } from 'react-apollo';
 import { addTechieMutation, getTechies } from '../queries/queries';
 import '../css/addtechie.css';
+import Button from 'muicss/lib/react/button';
+
 
 class AddTechie extends Component {
 
@@ -59,37 +61,37 @@ class AddTechie extends Component {
 
               <div className="field">
                 <label>Full Name</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})}/>
+                  <Input className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
                 <label>Profile Image</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})}/>
+                  <Input className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
                 <label>Short Bio</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})}/>
+                  <Input className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
                 <label>Your Tech Stack</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})}/>
+                  <Input className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
                 <label>Current Role</label>
-                <Input className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})}/>
+                <Input className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
                 <label>Years In Tech</label>
-                <Input className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})}/>
+                <Input className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
@@ -123,8 +125,8 @@ class AddTechie extends Component {
                 <Input className="input" type="text" onChange={ (e) => this.setState({ website: e.target.value })}/>
               </div>
 
-              <div>
-                <Button onClick={this.submitData.bind(this)} type="primary">Submit</Button> 
+              <div className="the-button">
+                <Button className="button" color="primary" variant="raised" onClick={this.submitData.bind(this)} type="primary">Submit</Button>
               </div>
 
             </form>

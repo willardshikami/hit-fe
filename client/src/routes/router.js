@@ -5,6 +5,7 @@ import Techie from "../components/Techie";
 import Techielist from "../components/Techielist";
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import '../css/router.css';
 
 //Apollo Setup
 const client = new ApolloClient({
@@ -15,13 +16,13 @@ const client = new ApolloClient({
 const Navigation = () => (
   <ApolloProvider client={client}>
   <Router>
-    <div>
+    <div className="nav">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">HOME</Link>
         </li>
         <li>
-          <Link to="/addtechie">AddTechie</Link>
+          <Link to="/addtechie">SUBMIT</Link>
         </li>
       </ul>
 

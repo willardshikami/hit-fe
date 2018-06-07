@@ -6,6 +6,7 @@
     "antd": "^3.5.4",
     "apollo-boost": "^0.1.6",
     "graphql": "^0.13.2",
+    "muicss": "^0.9.39",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.4.0",
