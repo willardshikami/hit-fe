@@ -1,0 +1,41 @@
+.formHead{
+  margin: 50px 10px;
+}
+
+.field{
+  padding-right: 100px;
+  margin-top: 20px;
+}
+
+.input{
+  width: 100%;
+  padding: 20px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.req{
+  color: #999999;
+  font-size: 12px;
+}
+
+.social{
+  margin: 40px 0; 
+}
+
+.social h2{
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+
+.social p{
+  font-size: 12px;
+  color: #999999
+}
+
+.the-button{
+  padding-top: 30px;
+}
