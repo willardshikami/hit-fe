@@ -1,0 +1,37 @@
+.main{
+  padding: 80px;
+}
+
+.card {
+  margin: 40px auto;
+  height: 500px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.content{
+  padding: 10px;
+}
+
+.avatar{
+  padding: 30px;
+}
+
+.heading{
+  text-align: center;
+}
+
+.body{
+  padding: 20px 0;
+}
+
+.link{
+  position: absolute; 
+  bottom: 30px;
+  text-align: center;
+  right: 65px;
+}

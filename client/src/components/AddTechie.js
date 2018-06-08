@@ -5,7 +5,7 @@ import { addTechieMutation, getTechies } from '../queries/queries';
 import '../css/addtechie.css';
 import { Row, Col, Input} from 'antd';
 import Button from 'muicss/lib/react/button';
-import TextArea from 'antd/lib/input/TextArea';
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
 
 
 class AddTechie extends Component {
@@ -64,75 +64,99 @@ class AddTechie extends Component {
             <form className="formHead">
 
               <div className="field">
+               <strong>
                 <label>FULL NAME</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required="required"/>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
-                <label>PERSONAL IMAGE</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required="required"/>
+               <strong>
+                <label>PERSONAL IMAGE URL</label>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>SHORT BIO</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} required="required"/>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} multiline rows={4} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>  
               </div>
               
               <div className="field">
+               <strong>
                 <label>ABOUT YOU (proudest career accomplishments, struggles & anything else)</label>
-                <TextArea className="input" type="text" onChange={ (e) => this.setState({ about: e.target.value})} required="required"/>
+                <TextField className="input" type="text" onChange={ (e) => this.setState({ about: e.target.value})} multiline rows={10} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>YOUR TECH STACK</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required="required"/>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>CURRENT ROLE</label>
-                <Input className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required="required"/>
+                <TextField className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>YEARS IN TECH</label>
-                <Input className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required="required"/>
+                <TextField className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="social">
-                <h2>SOCIAL</h2>
+                <h2>PERSONAL LINKS</h2>
                 <p> KINDLY FILL IN THE LINKS TO THEIR SPECIFIED AREAS</p>
               </div>
 
               <div className="field">
+               <strong>
                 <label>TWITTER</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ twitter: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>INSTAGRAM</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ instagram: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>LINKEDIN</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ linkedin: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>GITHUB</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ github: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
+               <strong>
                 <label>WEBSITE</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ website: e.target.value })}/>
+               </strong>
               </div>
 
               <div className="the-button">

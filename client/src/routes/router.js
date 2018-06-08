@@ -7,6 +7,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import '../css/router.css';
 
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+
 //Apollo Setup
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql'
@@ -16,6 +18,7 @@ const client = new ApolloClient({
 const Navigation = () => (
   <ApolloProvider client={client}>
   <Router>
+  <Fabric>
     <div className="nav">
       <ul>
         <li>
@@ -32,6 +35,7 @@ const Navigation = () => (
       <Route path="/addtechie" component={AddTechie} />
       <Route path="/techie" component={Techie} />
     </div>
+   </Fabric>
   </Router>
   </ApolloProvider>
 );
