@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const techieSchema = new Schema({
   name: String,
   bio: String,
+  about: String,
   img: String,
   stack: String,
   current_role: String,

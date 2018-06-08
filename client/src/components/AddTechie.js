@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Row, Col, Input} from 'antd';
 import { graphql, compose } from 'react-apollo';
 import { addTechieMutation, getTechies } from '../queries/queries';
+
 import '../css/addtechie.css';
+import { Row, Col, Input} from 'antd';
 import Button from 'muicss/lib/react/button';
+import TextArea from 'antd/lib/input/TextArea';
 
 
 class AddTechie extends Component {
@@ -13,6 +15,7 @@ class AddTechie extends Component {
     this.state = {
       name:'',
       bio: '',
+      about: '',
       img: '',
       stack: '',
       current_role: '',
@@ -31,6 +34,7 @@ class AddTechie extends Component {
       variables: {
         name: this.state.name,
         bio: this.state.bio,
+        about: this.state.about,
         img: this.state.img,
         stack: this.state.stack,
         current_role: this.state.current_role,
@@ -60,37 +64,43 @@ class AddTechie extends Component {
             <form className="formHead">
 
               <div className="field">
-                <label>Full Name</label>
+                <label>FULL NAME</label>
                   <Input className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
-                <label>Profile Image</label>
+                <label>PERSONAL IMAGE</label>
                   <Input className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
-                <label>Short Bio</label>
+                <label>SHORT BIO</label>
                   <Input className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} required="required"/>
+                <label className="req">This field is required</label>
+              </div>
+              
+              <div className="field">
+                <label>ABOUT YOU (proudest career accomplishments, struggles & anything else)</label>
+                <TextArea className="input" type="text" onChange={ (e) => this.setState({ about: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
-                <label>Your Tech Stack</label>
+                <label>YOUR TECH STACK</label>
                   <Input className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
-                <label>Current Role</label>
+                <label>CURRENT ROLE</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
 
               <div className="field">
-                <label>Years In Tech</label>
+                <label>YEARS IN TECH</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required="required"/>
                 <label className="req">This field is required</label>
               </div>
@@ -101,27 +111,27 @@ class AddTechie extends Component {
               </div>
 
               <div className="field">
-                <label>Twitter</label>
+                <label>TWITTER</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ twitter: e.target.value})}/>
               </div>
 
               <div className="field">
-                <label>Instagram</label>
+                <label>INSTAGRAM</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ instagram: e.target.value})}/>
               </div>
 
               <div className="field">
-                <label>LinkedIn</label>
+                <label>LINKEDIN</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ linkedin: e.target.value})}/>
               </div>
 
               <div className="field">
-                <label>Github</label>
+                <label>GITHUB</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ github: e.target.value})}/>
               </div>
 
               <div className="field">
-                <label>Website</label>
+                <label>WEBSITE</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ website: e.target.value })}/>
               </div>
 

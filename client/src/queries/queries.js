@@ -7,6 +7,7 @@ const getTechies = gql`
       id
       name
       bio
+      about
       img
       stack
       current_role
@@ -26,6 +27,7 @@ const getTechie = gql`
       id
       name
       bio
+      about
       img
       stack
       current_role
@@ -42,6 +44,7 @@ const getTechie = gql`
 const addTechieMutation = gql`
   mutation($name: String!,
            $bio: String!,
+           $about: String!,
            $img: String!,
            $stack: String!,
            $current_role: String!,
@@ -54,6 +57,7 @@ const addTechieMutation = gql`
     addTechie(
       name: $name,
       bio: $bio,
+      about: $about,
       img: $img,
       stack: $stack,
       current_role: $current_role,
