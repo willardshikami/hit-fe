@@ -5,11 +5,12 @@
 .card {
   margin: 40px auto;
   height: 500px;
-  max-width: 300px;
+  max-width: 320px;
   width: 100%;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+  border: 1px solid #eee;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .avatar{
-  padding: 30px;
+  padding: 50px;
 }
 
 .heading{

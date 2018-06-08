@@ -44,7 +44,6 @@ class Techielist extends Component {
                     size="xl"
                     src={techie.img}
                     name="Avatar"
-                    style={{ maxWidth: '80%', display: 'block' }}
                     /> 
               </div>
 
