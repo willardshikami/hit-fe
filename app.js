@@ -16,11 +16,11 @@ mongoose.connection.once('open', () => {
 app.use(cors());
 
 app.use('/graphql', graphqlHTTP ({
-  schema,
+  schema
 }));
 
 app.use('/', graphqlHTTP({endpointURL: '/graphql'}));
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('Server started successfully');
 })
