@@ -11,7 +11,7 @@ import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 
 //Apollo Setup
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'https://humansintech.herokuapp.com/graphql'
 })
 
 
