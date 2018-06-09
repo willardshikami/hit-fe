@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Row, Col, Input} from 'antd';
 import { graphql, compose } from 'react-apollo';
 import { addTechieMutation, getTechies } from '../queries/queries';
+
 import '../css/addtechie.css';
+import { Row, Col, Input} from 'antd';
 import Button from 'muicss/lib/react/button';
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
 
 
 class AddTechie extends Component {
@@ -13,6 +15,7 @@ class AddTechie extends Component {
     this.state = {
       name:'',
       bio: '',
+      about: '',
       img: '',
       stack: '',
       current_role: '',
@@ -31,6 +34,7 @@ class AddTechie extends Component {
       variables: {
         name: this.state.name,
         bio: this.state.bio,
+        about: this.state.about,
         img: this.state.img,
         stack: this.state.stack,
         current_role: this.state.current_role,
@@ -60,69 +64,99 @@ class AddTechie extends Component {
             <form className="formHead">
 
               <div className="field">
-                <label>Full Name</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required="required"/>
+               <strong>
+                <label>FULL NAME</label>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Profile Image</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required="required"/>
+               <strong>
+                <label>PERSONAL IMAGE URL</label>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Short Bio</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} required="required"/>
+               <strong>
+                <label>SHORT BIO</label>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} multiline rows={4} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>  
+              </div>
+              
+              <div className="field">
+               <strong>
+                <label>ABOUT YOU (proudest career accomplishments, struggles & anything else)</label>
+                <TextField className="input" type="text" onChange={ (e) => this.setState({ about: e.target.value})} multiline rows={10} required={true}/>
+                <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Your Tech Stack</label>
-                  <Input className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required="required"/>
+               <strong>
+                <label>YOUR TECH STACK</label>
+                  <TextField className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Current Role</label>
-                <Input className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required="required"/>
+               <strong>
+                <label>CURRENT ROLE</label>
+                <TextField className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Years In Tech</label>
-                <Input className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required="required"/>
+               <strong>
+                <label>YEARS IN TECH</label>
+                <TextField className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
+               </strong>
               </div>
 
               <div className="social">
-                <h2>SOCIAL</h2>
+                <h2>PERSONAL LINKS</h2>
                 <p> KINDLY FILL IN THE LINKS TO THEIR SPECIFIED AREAS</p>
               </div>
 
               <div className="field">
-                <label>Twitter</label>
+               <strong>
+                <label>TWITTER</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ twitter: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Instagram</label>
+               <strong>
+                <label>INSTAGRAM</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ instagram: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
-                <label>LinkedIn</label>
+               <strong>
+                <label>LINKEDIN</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ linkedin: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Github</label>
+               <strong>
+                <label>GITHUB</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ github: e.target.value})}/>
+               </strong>
               </div>
 
               <div className="field">
-                <label>Website</label>
+               <strong>
+                <label>WEBSITE</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ website: e.target.value })}/>
+               </strong>
               </div>
 
               <div className="the-button">

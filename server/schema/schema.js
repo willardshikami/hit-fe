@@ -19,6 +19,7 @@ const TechieType = new GraphQLObjectType({
     id: {type: GraphQLID},
     name: { type: GraphQLString },
     bio: { type: GraphQLString },
+    about: { type: GraphQLString },
     img: { type: GraphQLString },
     stack: { type: GraphQLString },
     current_role: { type: GraphQLString },
@@ -58,6 +59,7 @@ const Mutation = new GraphQLObjectType({
       args: {
         name: { type: GraphQLString },
         bio: { type: GraphQLString },
+        about: { type: GraphQLString },
         img: { type: GraphQLString },
         stack: { type: GraphQLString },
         current_role: { type: GraphQLString },
@@ -73,6 +75,7 @@ const Mutation = new GraphQLObjectType({
         let techie = new Techie({
           name: args.name,
           bio: args.bio,
+          about: args.about,
           img: args.img,
           stack: args.stack,
           current_role: args.current_role,
@@ -94,5 +97,3 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation
 });
-
-//years in tech, current role, personal links, 

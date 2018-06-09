@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import '../css/index.css'
 import { graphql } from 'react-apollo';
-import { Card, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 import { getTechies } from '../queries/queries';
 
-const { Meta } = Card;
+import 'gestalt/dist/gestalt.css';
+import '../css/index.css';
+import '../css/techielist.css';
+
+import {
+  Avatar,
+  Heading,
+  Text,
+  Link
+} from "gestalt";
+
 
 
 class Techielist extends Component {
@@ -26,15 +35,35 @@ class Techielist extends Component {
         return(
           
           <Col span={8} key={ techie.id } onClick={ (e) => this.setState({ selected: techie.id })}>
-            <Card 
-              className="techie-card"
-              bordered={false}
-              cover={<img alt="ProfileImage" src={techie.img} />}>
-            <Meta 
-              title={ techie.name }
-              description={ techie.current_role }
-              />
-            </Card>
+
+          <div className="card">
+            <div className="content">
+
+              <div className="avatar">
+                  <Avatar
+                    size="xl"
+                    src={techie.img}
+                    name="Avatar"
+                    /> 
+              </div>
+
+              <div className="heading">
+                <Heading size="xs">{techie.name}</Heading>
+                <Text align="center" color="midnight" size="lg">{techie.current_role}</Text>
+              </div>
+
+              <div className="body">
+                <Text align="center" size="sm">{techie.bio}</Text>
+              </div>
+
+              <div  className="link">
+               <Link href="">
+                <Text  color="navy" size="sm">View {techie.name}'s profile</Text>
+               </Link>
+              </div>
+
+            </div>
+          </div>
           </Col>
             )
       });
@@ -43,7 +72,7 @@ class Techielist extends Component {
 
   render() {
     return (
-      <div style={{ background: '#F2F2F2', padding: '100px' }}>
+      <div className="main">
         <Row gutter={16}>
           { this.loadTechies() }
         </Row>
