@@ -1,0 +1,33 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.5.4",
+    "apollo-boost": "^0.1.6",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "gestalt": "^0.72.0",
+    "graphql": "^0.13.2",
+    "morgan": "^1.9.0",
+    "muicss": "^0.9.39",
+    "office-ui-fabric-react": "^6.6.1",
+    "react": "^16.4.0",
+    "react-apollo": "^2.1.4",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  },
+  "homepage": "http://willardshikami.io/humansintech"
+}
