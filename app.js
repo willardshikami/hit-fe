@@ -3,6 +3,8 @@ const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
 const cors = require('cors');
+var favicon = require('serve-favicon')
+var path = require('path')
 
 const app = express();
 
@@ -11,6 +13,8 @@ mongoose.connect('mongodb://shikami:shikami@ds129780.mlab.com:29780/techies');
 mongoose.connection.once('open', () => {
   console.log('Connected to Database');
 })
+
+app.use(favicon(path.join(__dirname, 'client', 'favicon.ico')));
 
 //Allow cross origin requests
 app.use(cors());
