@@ -3,8 +3,6 @@ const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
 const cors = require('cors');
-var favicon = require('serve-favicon')
-var path = require('path')
 
 const app = express();
 
@@ -14,16 +12,15 @@ mongoose.connection.once('open', () => {
   console.log('Connected to Database');
 })
 
-app.use(favicon(path.join(__dirname, 'client', 'favicon.ico')));
-
 //Allow cross origin requests
 app.use(cors());
 
 app.use('/graphql', graphqlHTTP ({
   schema,
-  graphiql: true
 }));
 
-app.listen(process.envPORT || 8000, () => {
-  console.log('Server started');
+app.use('/', graphqlHTTP({endpointURL: '/graphql'}));
+
+app.listen(process.env.PORT || 8000, () => {
+  console.log('Server started successfully');
 })
