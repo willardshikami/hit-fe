@@ -8,7 +8,6 @@ const { GraphQLObjectType,
         GraphQLSchema,
         GraphQLID,
         GraphQLList
-
 }  = graphql;
 
 
