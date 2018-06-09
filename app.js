@@ -16,7 +16,8 @@ mongoose.connection.once('open', () => {
 app.use(cors());
 
 app.use('/graphql', graphqlHTTP ({
-  schema
+  schema,
+  graphiql: true
 }));
 
 app.use('/', graphqlHTTP({endpointURL: '/graphql'}));
