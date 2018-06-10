@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo';
 import { addTechieMutation, getTechies } from '../queries/queries';
+import { withRouter } from 'react-router-dom';
 
 import '../css/addtechie.css';
 import { Row, Col, Input} from 'antd';
 import Button from 'muicss/lib/react/button';
-import { TextField } from 'office-ui-fabric-react/lib/TextField';
+import TextArea from 'antd/lib/input/TextArea';
 
 
 class AddTechie extends Component {
@@ -47,6 +48,7 @@ class AddTechie extends Component {
       },
       refetchQueries: [{ query: getTechies}]
     })
+    this.props.history.push('/');
   }
 
 
@@ -56,7 +58,10 @@ class AddTechie extends Component {
         <Row>
 
           <Col span={12}>
-            col-12
+            <div className="submit">
+              <h1>Submissions</h1>
+              <p>Interested in sharing your story about your Tech journey, we and other techies across Africa would love to read it. Kindly fill in the form on your right to your satisfaction. Thanks :)</p>
+            </div>
           </Col>
 
           <Col span={12}>
@@ -66,7 +71,7 @@ class AddTechie extends Component {
               <div className="field">
                <strong>
                 <label>FULL NAME</label>
-                  <TextField className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required={true}/>
+                  <Input className="input" type="text" onChange={ (e) => this.setState({ name: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
               </div>
@@ -74,7 +79,7 @@ class AddTechie extends Component {
               <div className="field">
                <strong>
                 <label>PERSONAL IMAGE URL</label>
-                  <TextField className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required={true}/>
+                  <Input className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
               </div>
@@ -82,7 +87,7 @@ class AddTechie extends Component {
               <div className="field">
                <strong>
                 <label>SHORT BIO</label>
-                  <TextField className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} multiline rows={4} required={true}/>
+                  <TextArea className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>  
               </div>
@@ -90,7 +95,7 @@ class AddTechie extends Component {
               <div className="field">
                <strong>
                 <label>ABOUT YOU (proudest career accomplishments, struggles & anything else)</label>
-                <TextField className="input" type="text" onChange={ (e) => this.setState({ about: e.target.value})} multiline rows={10} required={true}/>
+                <TextArea className="input" type="text" onChange={ (e) => this.setState({ about: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
               </div>
@@ -98,7 +103,7 @@ class AddTechie extends Component {
               <div className="field">
                <strong>
                 <label>YOUR TECH STACK</label>
-                  <TextField className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required={true}/>
+                  <Input className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
               </div>
@@ -106,7 +111,7 @@ class AddTechie extends Component {
               <div className="field">
                <strong>
                 <label>CURRENT ROLE</label>
-                <TextField className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required={true}/>
+                <Input className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
               </div>
@@ -114,7 +119,7 @@ class AddTechie extends Component {
               <div className="field">
                <strong>
                 <label>YEARS IN TECH</label>
-                <TextField className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required={true}/>
+                <Input className="input" type="text" onChange={ (e) => this.setState({ years_in_tech: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
               </div>
@@ -171,6 +176,6 @@ class AddTechie extends Component {
   }
 }
 
-export default compose(
+export default withRouter(compose(
   graphql(addTechieMutation, { name: "addTechieMutation"})
-)(AddTechie);
+)(AddTechie));
