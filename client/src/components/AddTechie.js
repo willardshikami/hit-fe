@@ -60,7 +60,7 @@ class AddTechie extends Component {
           <Col span={12}>
             <div className="submit">
               <h1>Submissions</h1>
-              <p>Interested in sharing your story about your Tech journey, we and other techies would love to hear it. Kindly fill in the form on your right to your satisfaction. Thanks :)</p>
+              <p>Interested in sharing your story about your Tech journey, we and other techies across Africa would love to read it. Kindly fill in the form on your right to your satisfaction. Thanks :)</p>
             </div>
           </Col>
 

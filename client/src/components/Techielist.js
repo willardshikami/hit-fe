@@ -11,7 +11,8 @@ import {
   Avatar,
   Heading,
   Text,
-  Spinner
+  Spinner,
+  Link
 } from "gestalt";
 
 
@@ -59,9 +60,9 @@ class Techielist extends Component {
               </div>
 
               <div  className="link">
-              <div >
+              <Link href={techie.id} >
                 <Text  color="navy" size="sm">View {techie.name}'s profile</Text>
-               </div>
+               </Link>
               </div>
 
             </div>

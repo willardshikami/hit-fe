@@ -24,14 +24,12 @@ const Navigation = () => (
           <Link to="/">HOME</Link>
         </li>
         <li>
-          <Link to="/addtechie">SUBMISSIONS</Link>
+          <Link to="/submissions">SUBMISSIONS</Link>
         </li>
       </ul>
 
-      <hr />
-
       <Route exact path="/" component={Techielist} />
-      <Route path="/addtechie" component={AddTechie} />
+      <Route path="/submissions" component={AddTechie} />
     </div>
    </Fabric>
   </Router>

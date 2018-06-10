@@ -1,6 +1,5 @@
 @import '~antd/dist/antd.css';
 
-
 body {
   background: #FFFFFF;
   margin: 0;
@@ -8,11 +7,14 @@ body {
 }
 
 hr{
-  width: 80%;
-  border: 1px solid #999999;
+  width: 90%;
+  border: 1px solid #ECECEC
 }
 
 footer{
-  margin: 50px 20px;
+  color: #999999;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin: 80px 20px;
   text-align: center;
 }
