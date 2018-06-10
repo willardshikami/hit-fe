@@ -9,7 +9,7 @@ class Techie extends Component {
 console.log(this.props)
     return (
       <div style={{ background: '#F2F2F2', padding: '50px' }}>
-        
+        <h1>TECHIE PAGE</h1>
       </div>
     );
   }

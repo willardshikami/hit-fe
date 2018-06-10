@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import AddTechie from "../components/AddTechie";
-import Techie from "../components/Techie";
 import Techielist from "../components/Techielist";
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -25,7 +24,7 @@ const Navigation = () => (
           <Link to="/">HOME</Link>
         </li>
         <li>
-          <Link to="/addtechie">SUBMIT</Link>
+          <Link to="/addtechie">SUBMISSIONS</Link>
         </li>
       </ul>
 
@@ -33,7 +32,6 @@ const Navigation = () => (
 
       <Route exact path="/" component={Techielist} />
       <Route path="/addtechie" component={AddTechie} />
-      <Route path="/techie" component={Techie} />
     </div>
    </Fabric>
   </Router>

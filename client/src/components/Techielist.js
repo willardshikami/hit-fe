@@ -10,8 +10,7 @@ import '../css/techielist.css';
 import {
   Avatar,
   Heading,
-  Text,
-  Link
+  Text
 } from "gestalt";
 
 
@@ -41,7 +40,6 @@ class Techielist extends Component {
 
               <div className="avatar">
                   <Avatar
-                    size="xl"
                     src={techie.img}
                     name="Avatar"
                     /> 
@@ -57,9 +55,9 @@ class Techielist extends Component {
               </div>
 
               <div  className="link">
-               <Link href="">
+              <div >
                 <Text  color="navy" size="sm">View {techie.name}'s profile</Text>
-               </Link>
+               </div>
               </div>
 
             </div>
