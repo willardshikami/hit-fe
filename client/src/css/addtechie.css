@@ -2,6 +2,19 @@
   margin: 50px 10px;
 }
 
+.submit{
+  margin: 50px 70px;
+}
+
+.submit h1{
+  font-size: 50px;
+}
+
+.submit p{
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .field{
   padding-right: 150px;
   margin-top: 20px;
@@ -16,7 +29,7 @@
 }
 
 .req{
-  color: #999999;
+  color: #191970;
   font-size: 12px;
 }
 

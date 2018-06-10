@@ -10,7 +10,8 @@ import '../css/techielist.css';
 import {
   Avatar,
   Heading,
-  Text
+  Text,
+  Spinner
 } from "gestalt";
 
 
@@ -20,7 +21,8 @@ class Techielist extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selected: null
+      selected: null,
+      show: true
     };
   }
 
@@ -28,7 +30,9 @@ class Techielist extends Component {
     var data = this.props.data
     if(data.loading){
       //change to loading icon
-      return(<div>Loading...</div>)
+      return(<div className="loading">
+        <Spinner show={this.state.show} accessibilityLabel="Load Data" />
+      </div>)
     }else{
       return data.techies.map(techie => {
         return(
