@@ -6,10 +6,10 @@ import { getTechie } from '../queries/queries';
 
 class Techie extends Component {
   render() {
-console.log(this.props)
+    this.props
     return (
-      <div style={{ background: '#F2F2F2', padding: '50px' }}>
-        
+      <div>
+        {user.name}
       </div>
     );
   }

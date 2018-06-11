@@ -11,6 +11,7 @@ import {
   Avatar,
   Heading,
   Text,
+  Spinner,
   Link
 } from "gestalt";
 
@@ -21,7 +22,8 @@ class Techielist extends Component {
   constructor(props){
     super(props);
     this.state = {
-      selected: null
+      selected: null,
+      show: true
     };
   }
 
@@ -29,7 +31,9 @@ class Techielist extends Component {
     var data = this.props.data
     if(data.loading){
       //change to loading icon
-      return(<div>Loading...</div>)
+      return(<div className="loading">
+        <Spinner show={this.state.show} accessibilityLabel="Load Data" />
+      </div>)
     }else{
       return data.techies.map(techie => {
         return(
@@ -41,7 +45,6 @@ class Techielist extends Component {
 
               <div className="avatar">
                   <Avatar
-                    size="xl"
                     src={techie.img}
                     name="Avatar"
                     /> 
@@ -57,7 +60,7 @@ class Techielist extends Component {
               </div>
 
               <div  className="link">
-               <Link href="">
+              <Link href={techie.id} >
                 <Text  color="navy" size="sm">View {techie.name}'s profile</Text>
                </Link>
               </div>
