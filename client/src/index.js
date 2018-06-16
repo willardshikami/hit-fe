@@ -8,4 +8,3 @@ ReactDOM.render(
   <Navigation />,
     document.getElementById('root')
   );
-

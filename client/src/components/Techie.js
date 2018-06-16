@@ -6,7 +6,7 @@ import { getTechie } from '../queries/queries';
 
 class Techie extends Component {
   render() {
-    this.props
+    console.log(this.props)
     return (
       <div>
         {user.name}

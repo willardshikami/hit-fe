@@ -47,5 +47,9 @@
   position: absolute; 
   bottom: 30px;
   text-align: center;
-  right: 65px;
+  right: 70px;
+}
+
+.single{
+  cursor: pointer;
 }
