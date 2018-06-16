@@ -11,8 +11,7 @@ import {
   Avatar,
   Heading,
   Text,
-  Spinner,
-  Link
+  Spinner
 } from "gestalt";
 
 
@@ -38,7 +37,7 @@ class Techielist extends Component {
       return data.techies.map(techie => {
         return(
           
-          <Col span={8} key={ techie.id } onClick={ (e) => this.setState({ selected: techie.id })}>
+          <Col span={8} key={ techie.id }>
 
           <div className="card">
             <div className="content">
@@ -60,9 +59,7 @@ class Techielist extends Component {
               </div>
 
               <div  className="link">
-              <Link href={techie.id} >
-                <Text  color="navy" size="sm">View {techie.name}'s profile</Text>
-               </Link>
+                <p className="single" color="navy" onClick={ (e) => this.setState({ selected: techie.id })}>View {techie.name}'s profile</p>
               </div>
 
             </div>
