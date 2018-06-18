@@ -9,8 +9,6 @@ import '../css/techielist.css';
 
 import {
   Avatar,
-  Heading,
-  Text,
   Spinner
 } from "gestalt";
 
@@ -50,12 +48,12 @@ class Techielist extends Component {
               </div>
 
               <div className="heading">
-                <Heading size="xs">{techie.name}</Heading>
-                <Text align="center" color="midnight" size="lg">{techie.current_role}</Text>
+                <h2>{techie.name}</h2>
+                <div className="h4" align="center" color="midnight" size="lg">{techie.current_role}</div>
               </div>
 
               <div className="body">
-                <Text align="center" size="sm">{techie.bio}</Text>
+                <div align="center" size="sm">{techie.bio}</div>
               </div>
 
               <div  className="link">
