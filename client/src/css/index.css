@@ -68,6 +68,10 @@ body {
   padding-bottom: 100px; /* height of your footer */
  }
 
+ .logo{
+  font-weight: 400;
+}
+
 /*
   ========================================
   FOOTER
@@ -81,10 +85,14 @@ body {
  }
 
  .footer{
-  color: #999999;
+  color: #808080;
   font-weight: 400;
   padding: 60px 20px;
   text-align: center;
+}
+
+.footer-small{
+  color: #111517;
 }
 
 /*body,html{

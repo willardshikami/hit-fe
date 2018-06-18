@@ -18,7 +18,9 @@ const Navigation = () => (
   <ApolloProvider client={client}>
   <Router>
   <Fabric>
-    <div className="nav">
+    <div className="navbar">
+     <div className="logo">Humans in Tech</div>
+     <div className="nav">
       <ul>
         <li>
           <Link to="/">HOME</Link>
@@ -27,6 +29,7 @@ const Navigation = () => (
           <Link to="/submissions">SUBMISSIONS</Link>
         </li>
       </ul>
+      </div>
 
       <Route exact path="/" component={Techielist} />
       <Route path="/submissions" component={AddTechie} />

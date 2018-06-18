@@ -49,7 +49,7 @@ class Techielist extends Component {
 
               <div className="heading">
                 <h2>{techie.name}</h2>
-                <div className="h4" align="center" color="midnight" size="lg">{techie.current_role}</div>
+                <div className="h4" align="center">{techie.current_role}</div>
               </div>
 
               <div className="body">
