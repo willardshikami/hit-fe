@@ -1,13 +1,39 @@
+
+@font-face { 
+	font-family: "Museosans 900"; 
+	font-style: normal; 
+	font-weight: 900; 
+	src: url(../fonts/MuseoSans_900.otf) format("opentype"); 
+}
+
+@font-face {
+	font-family: "Averta"; 
+	font-style: normal; 
+	font-weight: 400;
+	src: url(../fonts/averta-regular-webfont.woff);
+}
+
+@font-face {
+	font-family: "Averta"; 
+	font-style: normal; 
+	font-weight: 300;
+	src: url(../fonts/averta-light-webfont.woff);
+}
+
 .formHead{
+  font-family: "Averta", sans-serif;
+  font-weight: 300;
   margin: 50px 10px;
 }
 
 .submit{
+  font-family: "Averta", sans-serif;
   margin: 50px 70px;
 }
 
 .submit h1{
   font-size: 50px;
+  font-weight: 400;
 }
 
 .submit p{

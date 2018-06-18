@@ -86,7 +86,7 @@ class AddTechie extends Component {
 
               <div className="field">
                <strong>
-                <label>SHORT BIO</label>
+                <label>SHORT BIO (a short one liner that best describes you)</label>
                   <TextArea className="input" type="text" onChange={ (e) => this.setState({ bio: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>  
