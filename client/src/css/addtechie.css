@@ -22,7 +22,7 @@
 
 .formHead{
   font-family: "Averta", sans-serif;
-  font-weight: 300;
+  font-weight: 300 !important;
   margin: 50px 10px;
 }
 
@@ -74,6 +74,7 @@
   color: #999999
 }
 
-.the-button{
-  padding-top: 30px;
+.notice{
+  color: #191970;
+  font-weight: 400;
 }
