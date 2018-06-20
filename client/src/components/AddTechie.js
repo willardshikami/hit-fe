@@ -78,7 +78,7 @@ class AddTechie extends Component {
 
               <div className="field">
                <strong>
-                <label>PERSONAL IMAGE URL</label>
+                <label>PERSONAL IMAGE URL (use img links from social media accounts)</label>
                   <Input className="input" type="text" onChange={ (e) => this.setState({ img: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
@@ -102,7 +102,7 @@ class AddTechie extends Component {
 
               <div className="field">
                <strong>
-                <label>YOUR TECH STACK</label>
+                <label>YOUR TECH STACK (JS, Ruby, Python etc)</label>
                   <Input className="input" type="text" onChange={ (e) => this.setState({ stack: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
@@ -110,7 +110,7 @@ class AddTechie extends Component {
 
               <div className="field">
                <strong>
-                <label>CURRENT ROLE</label>
+                <label>TYPE OF DEV</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ current_role: e.target.value})} required={true}/>
                 <label className="req">This field is required</label>
                </strong>
@@ -162,6 +162,12 @@ class AddTechie extends Component {
                 <label>WEBSITE</label>
                 <Input className="input" type="text" onChange={ (e) => this.setState({ website: e.target.value })}/>
                </strong>
+              </div>
+
+              <br/>
+
+              <div className="notice">
+                <p>*kindly double check for errors before submitting.</p>
               </div>
 
               <div className="the-button">
