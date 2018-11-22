@@ -28,7 +28,8 @@ script:
   - npm install codecov -g
   - ng lint
   - ng test --watch=false
-  - codecov -f coverage/lcov.info
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov 
   - ng build --prod
   
 deploy:
