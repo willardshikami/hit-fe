@@ -18,7 +18,8 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, 'coverage'), reports: ['html', 'text', 'text-summary'],
+      dir: require('path').join(__dirname, 'coverage'), 
+      reports: ['html', 'text', 'text-summary'],
       fixWebpackSourcePaths: true,
       thresholds: {
         statements: 100,
@@ -27,11 +28,7 @@ module.exports = function (config) {
         functions: 100,
       }
     },
-    reporters: ['mocha', 'kjhtml', 
-    // generates ./coverage/lcov.info
-      { type: 'lcovonly', subdir: '.' },
-      // generates ./coverage/coverage-final.json
-      { type: 'json', subdir: '.' },],
+    reporters: ['mocha', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
