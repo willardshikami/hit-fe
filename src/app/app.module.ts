@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { TechiesComponent } from './techies/techies.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { GraphqlModule } from './graphql.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +20,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     PagenotfoundComponent
   ],
   imports: [
+    GraphqlModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
