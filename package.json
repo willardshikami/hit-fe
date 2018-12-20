@@ -40,7 +40,6 @@
     "@angular/language-service": "~7.0.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/nangular firebaseode": "~8.9.4",
     "apollo-codegen": "^0.20.2",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
