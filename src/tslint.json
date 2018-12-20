@@ -12,6 +12,11 @@
             "element",
             "app",
             "kebab-case"
-        ]
+        ],
+        "lib": [
+            "es2017",
+            "dom",
+            "esnext.asynciterable"
+          ]
     }
 }
