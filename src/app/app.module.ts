@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ApolloModule, Apollo } from 'apollo-angular';
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { TechiesComponent } from './techies/techies.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,17 +26,18 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     ApolloModule,
     HttpLinkModule
   ],
-  providers: [],
+  providers: [{
+    provide: APOLLO_OPTIONS,
+    useFactory(httpLink: HttpLink) {
+      return {
+        cache: new InMemoryCache(),
+        link: httpLink.create({
+          uri: 'https://humansintech.herokuapp.com/graphql'
+        })
+      };
+    },
+    deps: [HttpLink]
+  }],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(
-    apollo: Apollo,
-    httpLink: HttpLink,
-  ) {
-    apollo.create({
-      link: httpLink.create({uri: ''}),
-      cache: new InMemoryCache
-    });
-   }
-}
+export class AppModule { }

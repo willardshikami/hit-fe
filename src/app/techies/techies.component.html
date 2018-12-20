@@ -1,3 +1,13 @@
-<p>
-  techies works!
-</p>
+<div class="container">
+  <div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+  <div *ngIf="techies">
+    <div *ngFor="let techie of techies">
+      <p>{{techie.name}}: {{techie.bio}}</p>
+    </div>
+  </div>
+</div>
